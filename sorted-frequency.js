@@ -1,11 +1,23 @@
 function sortedFrequency(arr, val) {
-  return arr.reduce((acc, curr) => {
-    if (curr === val) {
-      return (acc += 1);
-    } else {
-      return acc;
+  // return arr.reduce((acc, curr) => {
+  //   if (curr === val) {
+  //     return (acc += 1);
+  //   } else {
+  //     return acc;
+  //   }
+  // }, 0);
+
+  let count = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === val) {
+      count++;
     }
-  }, 0);
+    if (arr.indexOf(val) == -1) {
+      count = -1;
+    }
+  }
+  return count;
 }
 
 // module.exports = sortedFrequency;
